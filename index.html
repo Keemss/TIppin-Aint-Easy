@@ -1,70 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tip Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        input {
-            margin: 10px;
-            padding: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-        }
-    </style>
+<title>TippinAintEasy.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #cf8e6d;}
+.s4 { color: #2aacb8;}
+</style>
 </head>
-<body>
-    <h1>Tippin Ain't Easy! Let's Get You On Your Way 😎</h1>
-    <form id="tipCalculator" onsubmit="event.preventDefault(); calculateTip();">
-        <label for="bill">What was the total bill? $</label>
-        <input type="number" id="bill" placeholder="e.g., 100" required><br><br>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TippinAintEasy.py</font>
+</center></td></tr></table>
+<pre><span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;Tippin Aint Easy! Lets Get You On Your Way 😎.&quot;</span><span class="s1">)</span>
+<span class="s0">bill </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;What was the total bill? $&quot;</span><span class="s1">))</span>
+<span class="s0">tip </span><span class="s1">= </span><span class="s0">int</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;What percentage tip would you like to give? 10% 12% 15% ?&quot;</span><span class="s1">))</span>
+<span class="s0">people </span><span class="s1">= </span><span class="s0">int</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;How many people to split the bill? &quot;</span><span class="s1">))</span>
 
-        <label for="tip">What percentage tip would you like to give? </label>
-        <input type="number" id="tip" placeholder="e.g., 15" required><br><br>
-
-        <label for="people">How many people to split the bill? </label>
-        <input type="number" id="people" placeholder="e.g., 4" required><br><br>
-
-        <button type="submit">Calculate</button>
-    </form>
-
-    <p id="result"></p>
-
-    <label for="goofy">Who Paid For It? </label>
-    <input type="text" id="goofy" placeholder="Insert Name"><br><br>
-    <button onclick="showGoofy()">Submit</button>
-    <p id="goofyResult"></p>
-
-    <script>
-        function calculateTip() {
-            const bill = parseFloat(document.getElementById("bill").value);
-            const tip = parseInt(document.getElementById("tip").value);
-            const people = parseInt(document.getElementById("people").value);
-
-            if (isNaN(bill) || isNaN(tip) || isNaN(people) || bill <= 0 || tip <= 0 || people <= 0) {
-                document.getElementById("result").textContent = "Please enter valid positive numbers.";
-                return;
-            }
-
-            const eachPerson = (bill * (tip / 100 + 1) / people).toFixed(2);
-            document.getElementById("result").textContent = `Each Person Should Pay: $${eachPerson}`;
-        }
-
-        function showGoofy() {
-            const name = document.getElementById("goofy").value;
-            if (name.trim() === "") {
-                document.getElementById("goofyResult").textContent = "Please enter a name.";
-            } else {
-                document.getElementById("goofyResult").textContent = `${name}, You A Goofy 🤡🤡`;
-            }
-        }
-    </script>
+<span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;Each Person Should Pay: $ </span><span class="s3">{</span><span class="s0">round</span><span class="s1">(</span><span class="s0">bill </span><span class="s1">* (</span><span class="s0">tip </span><span class="s1">/ </span><span class="s4">100 </span><span class="s1">+ </span><span class="s4">1</span><span class="s1">) / </span><span class="s0">people </span><span class="s1">, </span><span class="s4">2</span><span class="s1">)</span><span class="s3">}</span><span class="s2">&quot;</span><span class="s1">)</span>
+<span class="s0">goofy </span><span class="s1">= </span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Who Paid For It? (Insert Name&quot;</span><span class="s1">)</span>
+<span class="s0">print</span><span class="s1">(</span><span class="s0">goofy </span><span class="s1">+ </span><span class="s2">&quot; You A Goofy 🤡🤡&quot;</span><span class="s1">)</span></pre>
 </body>
 </html>
